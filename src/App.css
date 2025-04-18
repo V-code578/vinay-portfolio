@@ -1,0 +1,51 @@
+/* App.css */
+.card {
+    position: relative;
+    border-radius: 12px;
+    padding: 1rem;
+    background: #ffffff; /* Clean white background */
+    color: #1e293b; /* Slate/dark gray text for readability */
+    overflow: hidden;
+    z-index: 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 10px rgba(99, 102, 241, 0.2); /* Subtle indigo shadow */
+  }
+  
+  .card::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    z-index: -1;
+    background: linear-gradient(
+      135deg,
+      #6366f1, /* Indigo */
+      #a855f7, /* Purple */
+      #6366f1
+    );
+    background-size: 400% 400%;
+    border-radius: 14px;
+    filter: blur(8px);
+    animation: softGlow 5s ease infinite;
+    opacity: 0.4;
+  }
+  
+  @keyframes softGlow {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  .card:hover {
+    transform: scale(1.05); /* Smooth zoom-in */
+    box-shadow: 0 12px 25px rgba(99, 102, 241, 0.35); /* Soft glowing hover shadow */
+  }
+  
